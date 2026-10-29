@@ -1,0 +1,344 @@
+{
+  "company_name": "ABC Coaching",
+  "tagline": "Building Strong Concepts. Achieving Bigger Results.",
+  "established_year": 2012,
+  "institute_type": "Coaching Center",
+  "website": "https://www.abccoaching.example.com",
+  "email": "admissions@abccoaching.example.com",
+  "address": {
+    "main_branch": "2nd Floor, Shanti Complex, MG Road, Pune, Maharashtra 411001",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "google_maps_url": "https://maps.google.com/?q=ABC+Coaching+Pune"
+  },
+  "branches": [
+    {
+      "branch_id": "BR001",
+      "name": "MG Road Main Branch",
+      "address": "2nd Floor, Shanti Complex, MG Road, Pune, Maharashtra 411001",
+      "phone": "9876543210",
+      "timing": "Monday to Saturday, 8:00 AM - 8:30 PM",
+      "facilities": ["Smart Classrooms", "Library", "Doubt-Solving Room", "Test Center"]
+    },
+    {
+      "branch_id": "BR002",
+      "name": "Kothrud Branch",
+      "address": "3rd Floor, Sai Plaza, Kothrud, Pune, Maharashtra 411038",
+      "phone": "9876500011",
+      "timing": "Monday to Saturday, 9:00 AM - 7:30 PM",
+      "facilities": ["Air-Conditioned Classrooms", "Online Class Studio", "Parent Waiting Area"]
+    }
+  ],
+  "courses": [
+    {
+      "course_id": "JEE",
+      "name": "JEE Main + Advanced",
+      "target_exam": "JEE Main and JEE Advanced",
+      "classes": ["11", "12", "Dropper"],
+      "duration": "1 Year",
+      "mode": ["Offline", "Online", "Hybrid"],
+      "fees": {
+        "amount": 50000,
+        "currency": "INR",
+        "frequency": "per year",
+        "registration_fee": 1000,
+        "installments": [
+          {"installment_no": 1, "amount": 20000, "due": "At admission"},
+          {"installment_no": 2, "amount": 15000, "due": "After 3 months"},
+          {"installment_no": 3, "amount": 15000, "due": "After 6 months"}
+        ],
+        "scholarship_available": true
+      },
+      "subjects": ["Physics", "Chemistry", "Mathematics"],
+      "syllabus_coverage": "Complete NCERT syllabus plus JEE Main and Advanced pattern practice",
+      "weekly_test": true,
+      "study_material": "Printed modules, DPPs, previous-year question banks, and online test series",
+      "seats_available": 25,
+      "popular": true
+    },
+    {
+      "course_id": "NEET",
+      "name": "NEET UG",
+      "target_exam": "NEET UG",
+      "classes": ["11", "12", "Dropper"],
+      "duration": "1 Year",
+      "mode": ["Offline", "Online", "Hybrid"],
+      "fees": {
+        "amount": 45000,
+        "currency": "INR",
+        "frequency": "per year",
+        "registration_fee": 1000,
+        "installments": [
+          {"installment_no": 1, "amount": 18000, "due": "At admission"},
+          {"installment_no": 2, "amount": 13500, "due": "After 3 months"},
+          {"installment_no": 3, "amount": 13500, "due": "After 6 months"}
+        ],
+        "scholarship_available": true
+      },
+      "subjects": ["Physics", "Chemistry", "Biology"],
+      "syllabus_coverage": "NCERT-based syllabus with NEET-pattern MCQs and full-length mock tests",
+      "weekly_test": true,
+      "study_material": "Biology diagrams, NCERT notes, topic-wise question banks, and test series",
+      "seats_available": 18,
+      "popular": false
+    },
+    {
+      "course_id": "FOUNDATION",
+      "name": "Foundation Program",
+      "target_exam": "School Boards, NTSE, Olympiads, and early JEE/NEET preparation",
+      "classes": ["8", "9", "10"],
+      "duration": "1 Year",
+      "mode": ["Offline", "Online"],
+      "fees": {
+        "amount": 50000,
+        "currency": "INR",
+        "frequency": "per year",
+        "registration_fee": 500,
+        "installments": [
+          {"installment_no": 1, "amount": 25000, "due": "At admission"},
+          {"installment_no": 2, "amount": 25000, "due": "After 4 months"}
+        ],
+        "scholarship_available": true
+      },
+      "subjects": ["Mathematics", "Science", "English", "Mental Ability"],
+      "syllabus_coverage": "School syllabus with Olympiad, NTSE, and foundation-level competitive preparation",
+      "weekly_test": true,
+      "study_material": "Chapter-wise notes, practice worksheets, and school-exam sample papers",
+      "seats_available": 30,
+      "popular": true
+    },
+    {
+      "course_id": "BOARD_12",
+      "name": "Class 12 Board Booster",
+      "target_exam": "CBSE / State Board Class 12",
+      "classes": ["12"],
+      "duration": "6 Months",
+      "mode": ["Offline", "Online"],
+      "fees": {
+        "amount": 25000,
+        "currency": "INR",
+        "frequency": "one-time",
+        "registration_fee": 500,
+        "installments": [
+          {"installment_no": 1, "amount": 12500, "due": "At admission"},
+          {"installment_no": 2, "amount": 12500, "due": "After 2 months"}
+        ],
+        "scholarship_available": false
+      },
+      "subjects": ["Physics", "Chemistry", "Mathematics", "Biology"],
+      "syllabus_coverage": "Board-focused revision, sample papers, and answer-writing practice",
+      "weekly_test": true,
+      "study_material": "Board sample papers, revision notes, and previous-year papers",
+      "seats_available": 20,
+      "popular": false
+    }
+  ],
+  "classes": ["8", "9", "10", "11", "12", "Dropper"],
+  "batches": [
+    {
+      "batch_id": "BAT001",
+      "name": "JEE Morning Batch",
+      "course_id": "JEE",
+      "timing": "7:00 AM - 10:00 AM",
+      "days": ["Monday", "Wednesday", "Friday", "Saturday"],
+      "mode": "Offline",
+      "branch_id": "BR001",
+      "start_date": "2026-04-15",
+      "seats_total": 40,
+      "seats_available": 8,
+      "status": "Open"
+    },
+    {
+      "batch_id": "BAT002",
+      "name": "JEE Evening Batch",
+      "course_id": "JEE",
+      "timing": "5:00 PM - 8:00 PM",
+      "days": ["Monday", "Wednesday", "Friday", "Saturday"],
+      "mode": "Hybrid",
+      "branch_id": "BR001",
+      "start_date": "2026-04-20",
+      "seats_total": 45,
+      "seats_available": 12,
+      "status": "Filling Fast"
+    },
+    {
+      "batch_id": "BAT003",
+      "name": "NEET Evening Batch",
+      "course_id": "NEET",
+      "timing": "5:30 PM - 8:30 PM",
+      "days": ["Tuesday", "Thursday", "Saturday", "Sunday"],
+      "mode": "Offline",
+      "branch_id": "BR002",
+      "start_date": "2026-05-01",
+      "seats_total": 40,
+      "seats_available": 15,
+      "status": "Open"
+    },
+    {
+      "batch_id": "BAT004",
+      "name": "Foundation Afternoon Batch",
+      "course_id": "FOUNDATION",
+      "timing": "1:00 PM - 3:30 PM",
+      "days": ["Monday", "Wednesday", "Friday"],
+      "mode": "Offline",
+      "branch_id": "BR001",
+      "start_date": "2026-04-10",
+      "seats_total": 35,
+      "seats_available": 6,
+      "status": "Filling Fast"
+    }
+  ],
+  "preferred_batch": "Evening",
+  "most_popular": {
+    "batches": ["Evening"],
+    "courses": ["JEE", "FOUNDATION"]
+  },
+  "faculty": [
+    {
+      "faculty_id": "F001",
+      "name": "Mr. Rajesh Sharma",
+      "designation": "Head Teacher",
+      "subject": "Physics",
+      "experience_years": 15,
+      "qualification": "M.Sc. Physics",
+      "courses": ["JEE", "NEET", "FOUNDATION"]
+    },
+    {
+      "faculty_id": "F002",
+      "name": "Ms. Anita Desai",
+      "designation": "Senior Faculty",
+      "subject": "Chemistry",
+      "experience_years": 12,
+      "qualification": "M.Sc. Chemistry",
+      "courses": ["JEE", "NEET"]
+    },
+    {
+      "faculty_id": "F003",
+      "name": "Mr. Vikram Patil",
+      "designation": "Mathematics Faculty",
+      "subject": "Mathematics",
+      "experience_years": 10,
+      "qualification": "M.Sc. Mathematics",
+      "courses": ["JEE", "FOUNDATION"]
+    },
+    {
+      "faculty_id": "F004",
+      "name": "Dr. Sneha Kulkarni",
+      "designation": "Biology Faculty",
+      "subject": "Biology",
+      "experience_years": 14,
+      "qualification": "Ph.D. Botany",
+      "courses": ["NEET", "FOUNDATION"]
+    }
+  ],
+  "phone_numbers": {
+    "owner": "12345678910",
+    "admission_team": "9876543210",
+    "head_teacher": "567892345",
+    "support_whatsapp": "9876543210"
+  },
+  "admission_process": {
+    "summary": "Contact the admission team for counselling, choose a course and batch, complete registration, and attend orientation.",
+    "steps": [
+      "Submit an enquiry through the website, WhatsApp, or phone call",
+      "Attend a free counselling or demo class",
+      "Choose course, batch timing, and branch",
+      "Submit required documents and registration fee",
+      "Pay the first installment or full fee",
+      "Receive timetable, study material, and student login details"
+    ],
+    "required_documents": [
+      "Student Aadhaar card",
+      "Previous class marksheet",
+      "Passport-size photograph",
+      "Parent/guardian contact details"
+    ],
+    "admission_team": {
+      "phone": "9876543210",
+      "email": "admissions@abccoaching.example.com",
+      "working_hours": "Monday to Saturday, 9:00 AM - 7:00 PM"
+    }
+  },
+  "facilities": [
+    "Air-conditioned classrooms",
+    "Smart boards and projectors",
+    "Doubt-solving sessions",
+    "Library and self-study area",
+    "Weekly and monthly tests",
+    "Online test portal",
+    "Parent-teacher meetings",
+    "Counselling support"
+  ],
+  "test_series": {
+    "frequency": "Weekly topic tests and monthly full-length tests",
+    "mode": ["Offline", "Online"],
+    "features": ["Detailed answer key", "All-India ranking", "Performance analysis", "Doubt discussion"]
+  },
+  "results": [
+    {
+      "year": 2025,
+      "exam": "JEE Main",
+      "students_qualified": 86,
+      "top_rank": "AIR 1,245",
+      "topper_name": "Aarav Mehta"
+    },
+    {
+      "year": 2025,
+      "exam": "NEET UG",
+      "students_qualified": 74,
+      "top_score": "685 / 720",
+      "topper_name": "Ishita Rao"
+    },
+    {
+      "year": 2025,
+      "exam": "Class 10 Boards",
+      "students_above_90_percent": 42,
+      "topper_name": "Rohan Joshi"
+    }
+  ],
+  "testimonials": [
+    {
+      "student_name": "Priya Nair",
+      "class": "12",
+      "course": "NEET",
+      "feedback": "The regular tests and doubt sessions helped me improve my Biology score significantly."
+    },
+    {
+      "student_name": "Karan Shah",
+      "class": "11",
+      "course": "JEE",
+      "feedback": "The teachers explain concepts from the basics, which made Physics and Maths much easier."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you provide demo classes?",
+      "answer": "Yes, free demo classes are available for JEE, NEET, and Foundation courses."
+    },
+    {
+      "question": "Are fees refundable?",
+      "answer": "Refunds are available only within 7 days of admission, after deducting the registration and study-material charges ."
+    },
+    {
+      "question": "Do you offer online classes?",
+      "answer": "Yes, selected JEE, NEET, and Foundation batches are available online or in hybrid mode."
+    },
+    {
+      "question": "Is there a scholarship test?",
+      "answer": "Yes, ABC Coaching conducts a scholarship-cum-admission test with fee concessions based on performance."
+    }
+  ],
+  "policies": {
+    "attendance_minimum": "75%",
+    "refund_policy": "7-day refund window after admission, subject to deductions",
+    "fee_payment_modes": ["Cash", "UPI", "Bank Transfer", "Card"],
+    "code_of_conduct": "Students must maintain discipline, attend tests regularly, and complete assigned homework."
+  },
+  "social_media": {
+    "instagram": "https://instagram.com/abccoaching",
+    "youtube": "https://youtube.com/@abccoaching",
+    "facebook": "https://facebook.com/abccoaching"
+  },
+  "last_updated": "2026-10-15"
+}
