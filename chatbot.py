@@ -4,10 +4,11 @@ from datetime import datetime
 import json
 import os
 import re
-
+from pathlib import Path
 import streamlit as st
 from dotenv import load_dotenv
 from groq import Groq
+
 
 
 # -----------------------------
@@ -171,8 +172,12 @@ if not api_key:
 client = Groq(api_key=api_key)
 
 try:
-    with open("company_info.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
+    BASE_DIR = Path(__file__).resolve().parent
+    INFO_FILE = BASE_DIR / "company_info.json"
+
+    with open(INFO_FILE, "r", encoding="utf-8") as file:
+        company_info = json.load(file)
+
 except (OSError, json.JSONDecodeError) as error:
     st.error(f"Could not load company_info.json: {error}")
     st.stop()
@@ -206,8 +211,7 @@ if "conversations" not in st.session_state:
 You are a customer support assistant for ABC Coaching.
 
 Coaching information:
-{json.dumps(data, ensure_ascii=False)}
-
+{json.dumps(company_info, ensure_ascii=False)}
 Rules:
 - Answer using the coaching information.
 - Never invent facts.
