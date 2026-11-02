@@ -1,5 +1,7 @@
 .env
+.streamlit/secrets.toml
 .venv/
 __pycache__/
-*.db
-*.sqlite3
+*.pyc
+leads.db
+.streamlit/secrets.toml

@@ -1,6 +1,3 @@
-
-import sqlite3
-from datetime import datetime
 import json
 import os
 import re
@@ -8,12 +5,16 @@ from pathlib import Path
 import streamlit as st
 from dotenv import load_dotenv
 from groq import Groq
+<<<<<<< HEAD
 
 
 
 # -----------------------------
 # 1. Page configuration
 # -----------------------------
+=======
+from supabase import create_client 
+>>>>>>> 7291f5a (Connect chatbot to Supabase)
 
 st.set_page_config(
     page_title="ABC Coaching Assistant",
@@ -21,87 +22,93 @@ st.set_page_config(
     layout="centered",
 )
 
+@st.cache_resource
+def init_supabase():
+
+    url = st.secrets["SUPABASE_URL"]
+    key = st.secrets["SUPABASE_SECRET_KEY"]
+
+    return create_client(url, key)
+
+
+supabase = init_supabase()
+
+try:
+    response = (
+        supabase
+        .table("leads")
+        .select("id")
+        .limit(1)
+        .execute()
+    )
+
+    st.success("Supabase connected successfully!")
+
+except Exception as e:
+    st.error(f"Supabase connection failed: {e}")
+
+# -----------------------------
+# 1. Page configuration
+# -----------------------------
+
+
+
 
 # -----------------------------
 # 2. Database
 # -----------------------------
 
-def init_db():
-    connection = sqlite3.connect("leads.db")
-
-    connection.execute("""
-        CREATE TABLE IF NOT EXISTS leads (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT DEFAULT '',
-            phone TEXT DEFAULT '',
-            class_name TEXT DEFAULT '',
-            course TEXT DEFAULT '',
-            batch TEXT DEFAULT '',
-            created_at TEXT
-        )
-    """)
-
-    # Support an existing database without the batch column
-    columns = connection.execute(
-        "PRAGMA table_info(leads)"
-    ).fetchall()
-
-    column_names = [column[1] for column in columns]
-
-    if "batch" not in column_names:
-        connection.execute(
-            "ALTER TABLE leads ADD COLUMN batch TEXT DEFAULT ''"
-        )
-
-    connection.commit()
-    connection.close()
-
+# -----------------------------
+# 2. Supabase Database
+# -----------------------------
 
 def save_lead(name, phone, class_name, course, batch):
-    connection = sqlite3.connect("leads.db")
+
+    lead_data = {}
+
+    if name:
+        lead_data["name"] = name
+
+    if phone:
+        lead_data["phone"] = phone
+
+    if class_name:
+        lead_data["class_name"] = class_name
+
+    if course:
+        lead_data["course"] = course
+
+    if batch:
+        lead_data["batch"] = batch
+
+    if not lead_data:
+        return
 
     lead_id = st.session_state.get("lead_id")
 
     if lead_id is None:
-        cursor = connection.execute("""
-            INSERT INTO leads
-            (name, phone, class_name, course, batch, created_at)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (
-            name,
-            phone,
-            class_name,
-            course,
-            batch,
-            datetime.now().isoformat(timespec="seconds"),
-        ))
 
-        st.session_state["lead_id"] = cursor.lastrowid
+        response = (
+            supabase
+            .table("leads")
+            .insert(lead_data)
+            .select("id")
+            .execute()
+        )
+
+        if response.data:
+            st.session_state["lead_id"] = response.data[0]["id"]
 
     else:
-        # Update only fields that contain new information
-        connection.execute("""
-            UPDATE leads
-            SET name = CASE WHEN ? != '' THEN ? ELSE name END,
-                phone = CASE WHEN ? != '' THEN ? ELSE phone END,
-                class_name = CASE WHEN ? != '' THEN ? ELSE class_name END,
-                course = CASE WHEN ? != '' THEN ? ELSE course END,
-                batch = CASE WHEN ? != '' THEN ? ELSE batch END
-            WHERE id = ?
-        """, (
-            name, name,
-            phone, phone,
-            class_name, class_name,
-            course, course,
-            batch, batch,
-            lead_id,
-        ))
 
-    connection.commit()
-    connection.close()
+        supabase \
+            .table("leads") \
+            .update(lead_data) \
+            .eq("id", lead_id) \
+            .execute()
 
 
-init_db()
+
 
 
 # -----------------------------
