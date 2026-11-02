@@ -1,4 +1,4 @@
 streamlit
-groq
-python-dotenv
 supabase
+pandas
+streamlit-autorefresh
