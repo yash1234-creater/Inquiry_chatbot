@@ -48,12 +48,19 @@ if not st.session_state.authenticated:
 
 @st.cache_resource
 def init_supabase():
-
     url = st.secrets["SUPABASE_URL"]
     key = st.secrets["SUPABASE_SECRET_KEY"]
 
-    return create_client(url, key)
+    if key.startswith("sb_secret_"):
+        st.write("Key type: Secret key")
+    elif key.startswith("sb_publishable_"):
+        st.write("Key type: Publishable key")
+    elif key.startswith("eyJ"):
+        st.write("Key type: Legacy JWT key (needs role verification)")
+    else:
+        st.write("Key type: Unknown")
 
+    return create_client(url, key)
 
 supabase = init_supabase()
 
