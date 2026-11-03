@@ -71,12 +71,13 @@ st_autorefresh(
 @st.cache_data(ttl=3)
 def get_leads():
     response = (
-        supabase
-        .table("leads")
-        .select("*")
-        .order("created_at", desc=True)
-        .execute()
-    )
+    supabase
+    .table("leads")
+    .select("*")
+    .execute()
+)
+
+    st.write("Database response:", response.data)
 
     return response.data
 
