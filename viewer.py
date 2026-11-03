@@ -93,8 +93,11 @@ try:
     leads = get_leads()
 
     st.success("Database connected")
+    st.write("Connected Supabase project:",
+         st.secrets["SUPABASE_URL"].split("//")[-1].split(".")[0])
 
-    total = len(leads)
+    st.write("Records received from database:", len(leads))
+        total = len(leads)
 
     col1, col2 = st.columns(2)
 
