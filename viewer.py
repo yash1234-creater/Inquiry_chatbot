@@ -97,8 +97,9 @@ try:
          st.secrets["SUPABASE_URL"].split("//")[-1].split(".")[0])
 
     st.write("Records received from database:", len(leads))
-        total = len(leads)
+    st.write("Records received from database:", len(leads))
 
+    total = len(leads)
     col1, col2 = st.columns(2)
 
     col1.metric("Total inquiries", total)
