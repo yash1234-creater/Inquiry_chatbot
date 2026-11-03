@@ -2,3 +2,5 @@ streamlit
 supabase
 pandas
 streamlit-autorefresh
+python-dotenv
+groq
